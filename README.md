@@ -25,6 +25,17 @@ VeriRuntime complements EDR, Falco, and CNAPP tools by validating a missing inva
 
 > *"Is the binary that is actually running the one we intended to run?"*
 
+## Verification Coverage and Guarantees
+
+VeriRuntime explicitly reports **what was verified and what was not**.
+
+A process is **never reported as fully verified** unless all intended
+verification scopes succeed.
+
+If verification is partially degraded due to permission, platform,
+or environmental limitations, VeriRuntime emits an explicit
+`VERIFICATION_DEGRADED` event instead of silently reporting success.
+
 ---
 
 ## Core Concepts
