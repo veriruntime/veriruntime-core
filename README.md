@@ -173,6 +173,21 @@ Events are rate-limited and designed to be low-volume, high-signal.
 
 ---
 
+## Verification Coverage Semantics
+
+VeriRuntime defines verification as a scoped operation.
+Each verification result MUST include the set of scopes
+that were successfully verified and those that were not.
+
+Under no circumstances shall VeriRuntime report a process
+as fully verified when any intended verification scope
+fails or is skipped.
+
+Verification degradation MUST be reported explicitly
+via a VERIFICATION_DEGRADED event.
+
+---
+
 # Roadmap
 
 ## Phase 0 – Foundation (Week 0–1)
